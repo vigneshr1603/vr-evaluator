@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+div{
+  
+  column-gap: 40px;
+}
+
+body{
+  min-height: 100vh;
+  background: rgb(219, 227, 245);
+}
+
+z{
+  
+  background-color: rgb(255, 238, 238);
+  color: rgb(231, 83, 128);
+  padding: 4px;
+  border-radius: 3px;
+  border-style:solid;
+  font-family: 'Montserrat', sans-serif;
+  border-width: thin;
+  border-color: hotpink;
+  
+}
+y{
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 3px;
+  padding-top: 8px;
+  background-color: rgb(255, 242, 249);
+  font-family: 'Montserrat', sans-serif;
+}
+.wrap1 {
+  margin-top: 300px;
+  position:relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  
+}
+img:hover{
+  -webkit-transform: scale(1.15);
+	-moz-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	transform: scale(1.15);
+
+}
+
+  header{
+    z-index: 999;
+    position: fixed;
+    height: 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    transition: 0.6s;
+    color: bisque;
+    border-bottom-right-radius:20px;
+    
+    border-bottom-left-radius: 20px;
+    
+  background: #5d7ee2;
+
+  }
+  
+  header.sticky{
+    
+
+    padding: 15px 30px;
+    transition:1s;
+    background-color: #5d7ee2;
+  }
+  
+  header .brand{
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  
+  header .menu{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  header .menu a{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 550;
+    text-decoration: none;
+    margin: 0 30px;
+    
+    padding: 0 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    
+    transition-property: color, background;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  header .menu a:hover{
+    color: rgb(251, 255, 0);
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  
+  header .btn{
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+  }
+  .section-two{
+    min-height: 100vh;
+    background: #aaa;
+    padding: 20px 100px;
+  }
+  
+  .section-two h2{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 30px 0;
+  }
+  
+  .section-two p{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    margin: 30px 0;
+  }
+  
+  @media (max-width: 1060px){
+    header .btn{
+      display: block;
+    }
+  
+    header .menu{
+      position: fixed;
+      background:rgb(120, 154, 240);
+      flex-direction: column;
+      min-width: 100px;
+      height: 100vh;
+      top: 0;
+      right: -100%;
+      padding: 80px 50px;
+      transition: 0.5s;
+      transition-property: right;
+      
+    }
+  
+    header .menu.active{
+      right: 0;
+      
+    }
+  
+    header .menu .close-btn{
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 25px;
+      color: rgb(255, 255, 255);
+    }
+    .menu-btn{
+      color: white;
+    }
+  
+    
+    header .menu a{
+      display: block;
+      font-size: 20px;
+      margin: 20px;
+      padding: 0 15px;
+      font-family: 'Montserrat', sans-serif;
+    
+    }
+  }
+  
+  @media (max-width: 630px){
+    .section-main h1{
+      font-size: 50px;
+      line-height: 60px;
+    }
+  }    
+  c{
+      font-weight: 800;
+      
+  font-family: Garamond, serif;
+      font-size: x-large;
+      color: rgb(255, 255, 255);
+      
+  }
+  .user-input-wrp {
+    position: relative;
+    width: 50%;
+  }
+  .user-input-wrp .inputText{
+    width: 95%;
+    outline: none;
+    border:none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #777;
+    
+  background: rgb(219, 227, 245);
+     box-shadow: none !important;
+  }
+  .user-input-wrp .inputText:focus{
+    background: rgb(219, 227, 245);
+    
+    border-width : medium medium 2px;
+  }
+  .user-input-wrp .floating-label {
+    position: relative;
+    pointer-events: none;
+    font-size:medium;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:rgb(34, 2, 12);
+    top:-45px;
+    left: 0%;
+    transition: 1s ease all;
+  }
+  .user-input-wrp input:focus ~ .floating-label,
+  .user-input-wrp input:not(:focus):valid ~ .floating-label{
+    
+    top:-70px;
+    left: 0px;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(110, 110, 109);
+    text-transform:inherit;
+    opacity: 1;
+  }
+  .some-thing{
+    font-family: 'Montserrat', sans-serif;
+  }
+  some{
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    font-weight: 510;
+
+  }
+  heading{
+    
+  color: rgba(0, 0, 0, 0.993);
+  padding: 3px;
+  border-radius: 4px;
+  font-size: large;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+
+  }
+  .box { 
+    
+    background:rgb(255, 255, 255); 
+    width:fit-content; 
+    align-items: center;
+    border-radius: 10px;
+    display: inline-block;
+    
+    font-size: 20px;
+    bottom: 10px; 
+    padding: 10px;
+    cursor: pointer;
+    
+} 
+.box:hover{
+  box-shadow:  2px 2px 25px #c5c4c4;
+  
+	transform: scale(1.02);
+}
+  w{
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 3px;
+    
+    color: rgb(125, 125, 248);
+    font-weight: 700;
+  }
+  v{
+    font-family: 'Montserrat', sans-serif;
+    background-color:  rgb(255, 255, 255);
+    justify-content: space-between;
+    border-radius: 3px;
+  }
+  .content{
+     align-items: center;
+     
+  }
+  
+  .content>div{
+    margin: 50px;
+    align-content: center;
+  }
+  
