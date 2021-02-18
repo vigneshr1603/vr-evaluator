@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>VR Evaluator</title>
+  
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+  <script src="js/convertor.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<STYLE>
+  A {
+    text-decoration: none;
+  }
+</STYLE>
+
+<body>
+  <header>
+    <a href="./index.html">
+      <c>VR EVALUATOR</c>
+    </a>
+    <div class="menu">
+      <div class="btn">
+        <i class="fa fa-times close-btn"></i>
+      </div>
+
+      <a href="./index.html"><img src="images/hi.png" height="25"></img></a>
+      <a href="./about.html"><img src="images/abi.png" class="active" height="25"></img></a>
+      <a href="https://github1s.com/vigneshr1603/vr-evaluator"><img src="images/vsc.png" height="25"></img></a>
+    </div>
+    <div class="btn">
+      <i class="fa fa-bars menu-btn"></i>
+    </div>
+  </header>
+  <center>
+    <br></br><br>
+    <div class="some-thing"><br></br>
+      <some>This is a simple web app which evaluates infix, prefix and postfix expressions.<br></br>This also converts
+        an expression to its corresponding infix, prefix and postfix form.</some><br><br></br>
+      <heading>1.Symbols allowed</heading><br></br>
+      <y>
+        <z>+</z> plus
+      </y> &nbsp;
+      <y>
+        <z>/</z> division
+      </y> &nbsp;<br><br>
+      <y>
+        <z>*</z> multiplication
+      </y> &nbsp;
+      <y>
+        <z>^</z> power
+      </y><br></br>
+      <y>
+        <z>-</z> minus
+      </y>&nbsp;
+      <y>
+        <z>(</z>
+        <z>)</z>
+        <z>{</z>
+        <z>}</z>
+        <z>[</z>
+        <z>]</z> brackets
+      </y> <br><br>
+      <y>&nbsp;<z>0-9</z>&nbsp;Numbers</y>
+      <br></br><br>
+      <heading>2.Input format</heading><br></br>
+      Enter either infix, prefix or postfix equation and press enter.<br></br>
+      Enter the equation with one or more <some>spaces</some> between the operators and operands.<br></br>
+      <y>Eg1: <z>77 22 - 11 *</z>
+      </y><br></br>
+      <y>Eg2: <z>( 2 + 7 ) * 2</z>
+      </y>&nbsp;
+      <y>Eg3: <z>23 + 7 ^ 32 / 9</z>
+      </y>
+      <br></br><br>
+      <heading>3.Output format</heading><br></br>
+      Infix, Prefix and Postfix equations and the answer will be displayed for correct input.
+      <br></br>
+
+      <y>Input : <z>1 2 3 + *</z>
+      </y> <br></br> Output : <br></br>
+      <y>Answer : <z>5</z>
+      </y> &nbsp;&nbsp;<y>Infix : <z>( 1 * ( 2 + 3 ) )</z>
+      </y> <br></br>
+      <y>Prefix : <z>* 1 + 2 3</z>
+      </y>&nbsp;
+      <y>Postfix : <z>1 2 3 + *</z>
+      </y><br></br> <br></br>
+      <heading>4.Copy your Output</heading><br></br>
+      Click on the displayed output to copy your Output<br><br>
+
+    </div>
+  </center>
+</body>
+<script type="text/javascript">
+  //javascript for navigation bar effect on scroll
+  window.addEventListener("scroll", function () {
+    var header = document.querySelector("header");
+    header.classList.toggle('sticky', window.scrollY > 0);
+  });
+
+  //javascript for responsive navigation sidebar menu
+  var menu = document.querySelector('.menu');
+  var menuBtn = document.querySelector('.menu-btn');
+  var closeBtn = document.querySelector('.close-btn');
+
+  menuBtn.addEventListener("click", () => {
+    menu.classList.add('active');
+  });
+
+  closeBtn.addEventListener("click", () => {
+    menu.classList.remove('active');
+  });
+
+</script>
+
+</html>
