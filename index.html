@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>VR Evaluator</title>
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+  <script src="js/convertor.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<STYLE>
+  A {
+    text-decoration: none;
+  }
+</STYLE>
+
+<body>
+  <header>
+    <a href="./index.html">
+      <c>VR EVALUATOR</c>
+    </a>
+    <div class="menu">
+      <div class="btn">
+        <i class="fa fa-times close-btn"></i>
+      </div>
+
+      <a href="./index.html"><img class="active" src="images/hi.png" height="25"></img></a>
+      <a href="./about.html"><img src="images/abi.png" height="25"></img></a>
+
+      <a href="https://github1s.com/vigneshr1603/vr-evaluator"><img src="images/vsc.png" height="25"></img></a>
+    </div>
+    <div class="btn">
+      <i class="fa fa-bars menu-btn"></i>
+    </div>
+  </header>
+  <br></br><br><br></br>
+  <center>
+    <div class="content">
+      <div class="user-input-wrp">
+        <br />
+        <input id="fst" data-filter='[\d\(\)[\]{\}/\^\-+*. ]+$' class="inputText" autocomplete="off" copy required />
+        <span class="floating-label">Enter Equation and press Enter</span>
+      </div>
+      <br>
+      <div class="box" onclick="CopyToClipboard('ans')">
+        <br>
+        <w>Answer</w>
+        <br><br>
+        <v id="ans">No input</v>
+        <br><br>
+      </div>
+      <div class="box" onclick="CopyToClipboard('infi')"><br>
+        <w>Infix Expression</w>
+        <br><br>
+        <v id="infi">No input</v><br><br>
+      </div>
+      <div class="box" onclick="CopyToClipboard('prefi')">
+        <br>
+        <w>Prefix Expression</w>
+        <br><br>
+        <v id="prefi">No input </v><br><br>
+      </div>
+      <div class="box" onclick="CopyToClipboard('postfi')"><br>
+        <w>Postfix Expression</w>
+        <br><br>
+        <v id="postfi">No input</v><br><br>
+      </div><br><br><br><br><br>
+    </div>
+  </center>
+</body>
+<script type="text/javascript">
+  //javascript for navigation bar effect on scroll
+  /*<div class="t">&nbsp;<w>Infix Expression</w>&nbsp;
+      &nbsp;<v id="infi">No input</v>&nbsp;<button class="copy" onclick="CopyToClipboard('infi')"><span
+          class="copy-vis">Copy</span></button>&nbsp;</div><br></br><br></br>
+    <div class="t"><br></br>&nbsp;<w>Prefix Expression</w>&nbsp;</br><br>
+      &nbsp;<v id="prefi">No input</v>&nbsp;<button class="copy" onclick="CopyToClipboard('prefi')"><span
+          class="copy-vis">Copy</span></button>&nbsp;</div><br></br><br></br>
+    <div class="t"><br></br>&nbsp;<w>Postfix Expression</w>&nbsp;</br><br>
+    &nbsp;<v id="postfi">No input</v>&nbsp;<button class="copy" onclick="CopyToClipboard('postfi')"><span
+        class="copy-vis">Copy</span></button>&nbsp;</div><br></br><br></br>*/
+  window.addEventListener("scroll", function () {
+    var header = document.querySelector("header");
+    header.classList.toggle('sticky', window.scrollY > 0);
+  });
+
+  //javascript for responsive navigation sidebar menu
+  var menu = document.querySelector('.menu');
+  var menuBtn = document.querySelector('.menu-btn');
+  var closeBtn = document.querySelector('.close-btn');
+
+  menuBtn.addEventListener("click", () => {
+    menu.classList.add('active');
+  });
+
+  closeBtn.addEventListener("click", () => {
+    menu.classList.remove('active');
+  });
+  var input = document.getElementById("fst");
+  input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      run();
+    }
+    if (event.keyCode === 8) {
+      var now = document.getElementById("fst").value;
+      if (now.length === 1)
+        document.getElementById("fst").value = "";
+    }
+  });
+  let inputs = document.querySelectorAll('input[data-filter]');
+
+  for (let input of inputs) {
+    let state = {
+      value: input.value,
+      start: input.selectionStart,
+      end: input.selectionEnd,
+      pattern: RegExp('^' + input.dataset.filter + '$')
+    };
+
+    input.addEventListener('input', event => {
+      if (state.pattern.test(input.value)) {
+        state.value = input.value;
+      } else {
+        input.value = state.value;
+        input.setSelectionRange(state.start, state.end);
+      }
+    });
+
+    input.addEventListener('keydown', event => {
+      state.start = input.selectionStart;
+      state.end = input.selectionEnd;
+    });
+  }
+
+  function CopyToClipboard(id) {
+    var r = document.createRange();
+    r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    window.alert("Copied!");
+  }
+</script>
+
+
+</html>
